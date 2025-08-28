@@ -36,6 +36,16 @@ links.forEach((link) => {
   });
 });
 
+const portfolio_filters = document.querySelectorAll(
+  "#portfolio .filter button"
+);
+portfolio_filters.forEach((button) => {
+  button.addEventListener("click", () => {
+    portfolio_filters.forEach((b) => b.classList.remove("active"));
+    button.classList.add("active");
+  });
+});
+
 // // to make header color change on scrolling to Sections
 // const header = document.querySelector("header");
 
@@ -134,3 +144,4 @@ const observer_bg = new IntersectionObserver(
 
 sections.forEach((sec) => observer.observe(sec));
 observer_bg.observe(document.querySelector("#services .overlay"));
+observer_bg.observe(document.querySelector("#portfolio > .overlay"));
