@@ -112,6 +112,15 @@ const observer = new IntersectionObserver(
         header.className = "";
         // add new class for this section
         header.classList.add(`header--${entry.target.id}`);
+
+        //to keep nav links updated to current section
+        let current_section = document.querySelector(
+          `nav a[href="#${entry.target.id}"]`
+        );
+        links.forEach((link) => {
+          link.classList.remove("active");
+        });
+        current_section.classList.add("active");
       }
     });
   },
@@ -130,7 +139,7 @@ const observer_bg = new IntersectionObserver(
         // remove old classes (keep 'default' if needed)
         header.className = "";
         // add new class for this section
-        header.classList.add("header--home");
+        header.classList.add("header--diff");
       } else header.className = "header--services";
     });
   },
@@ -145,3 +154,4 @@ const observer_bg = new IntersectionObserver(
 sections.forEach((sec) => observer.observe(sec));
 observer_bg.observe(document.querySelector("#services .overlay"));
 observer_bg.observe(document.querySelector("#portfolio > .overlay"));
+observer_bg.observe(document.querySelector("#portfolio .grid"));

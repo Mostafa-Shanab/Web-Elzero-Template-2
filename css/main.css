@@ -92,10 +92,16 @@ header {
   width: 100%;
   top: 0px;
   z-index: 3;
+  transition: background-color 1s;
 }
 /* Section-based styles */
-.header--home * {
+.header--home *,
+.header--diff * {
   color: white;
+}
+.header--diff,
+.header--diff nav ul.show {
+  background-color: #0c0d19a1;
 }
 .header--services *,
 .header--portfolio *,
@@ -123,7 +129,6 @@ nav ul.show {
   left: 0;
   text-align: center;
   row-gap: 15px;
-  background-color: #00caff45;
   padding-block: 10px;
 }
 
@@ -143,6 +148,7 @@ nav {
 header ul {
   display: flex;
   column-gap: 30px;
+  transition: background-color 1s;
 }
 
 nav a {
