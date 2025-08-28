@@ -3,8 +3,18 @@
 // for menu icon in mobile
 const menuBtn = document.querySelector("header .toggle");
 const navLinks = document.querySelector("nav ul");
-menuBtn.addEventListener("click", () => {
+menuBtn.addEventListener("click", (e) => {
   navLinks.classList.toggle("show");
+});
+
+// Close menu when clicking outside
+document.addEventListener("click", (e) => {
+  if (
+    navLinks.classList.contains("show") &&
+    !navLinks.contains(e.target) &&
+    e.target !== menuBtn
+  )
+    navLinks.classList.remove("show");
 });
 
 // to make the bullets and links active when clicked
