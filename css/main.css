@@ -87,7 +87,6 @@ header {
   width: 100%;
   top: 0px;
   z-index: 3;
-  transition: color 1.5s;
 }
 /* Section-based styles */
 .header--home * {
@@ -107,9 +106,10 @@ header img {
 
 header .toggle {
   display: none;
+  cursor: pointer;
 }
 
-header .toggle:hover + ul {
+nav ul.show {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -119,6 +119,7 @@ header .toggle:hover + ul {
   text-align: center;
   row-gap: 15px;
   background-color: #00caff45;
+  padding-block: 10px;
 }
 
 nav {
@@ -142,15 +143,18 @@ header ul {
 nav a {
   text-decoration: none;
   text-transform: uppercase;
-  transition: 0.3s;
+  transition: color 0.5s;
 }
-
+.nav-links a i {
+  transition: color 0.5s;
+}
 .nav-links > a {
   border-inline-start: 2px solid #ddd;
   padding-inline-start: 10px;
 }
 nav a.active,
-nav a:hover {
+nav a:hover,
+.nav-links a:hover i {
   color: var(--primary-color);
   position: relative;
 }
@@ -274,8 +278,8 @@ nav a:hover {
   z-index: 2;
 }
 .bullets span {
-  width: 15px;
-  height: 15px;
+  width: 1em;
+  height: 1em;
   border: 1px solid hsl(0, 0%, 100%);
   border-radius: 50%;
 }
@@ -291,7 +295,7 @@ nav a:hover {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 30px;
+  font-size: 3em;
   color: hsla(0, 0%, 100%, 0.5);
   cursor: pointer;
   z-index: 2;
@@ -308,7 +312,7 @@ nav a:hover {
   top: 50%;
   transform: translateY(-50%);
   background-color: rgba(2, 181, 228, 0.5);
-  padding-inline: 15% 3%;
+  padding-inline: 15% 5%;
   padding-block: 30px;
 }
 #home .text h1 {

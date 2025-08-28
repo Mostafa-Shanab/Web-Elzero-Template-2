@@ -1,4 +1,12 @@
 "use strict";
+
+// for menu icon in mobile
+const menuBtn = document.querySelector("header .toggle");
+const navLinks = document.querySelector("nav ul");
+menuBtn.addEventListener("click", () => {
+  navLinks.classList.toggle("show");
+});
+
 // to make the bullets and links active when clicked
 const bullets = document.querySelectorAll(".bullets span");
 bullets.forEach((bullet) => {
