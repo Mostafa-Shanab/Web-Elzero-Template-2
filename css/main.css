@@ -935,7 +935,7 @@ nav a:hover,
 
 #pricing .overlay {
   padding-block: 100px;
-  background: url(../assets/images/bg_img_about2.jpg) no-repeat center center /
+  background: url(../assets/images/bg_img_pricing.jpg) no-repeat center center /
     cover;
   background-blend-mode: overlay;
   background-color: rgba(0, 0, 0, 0.5);
