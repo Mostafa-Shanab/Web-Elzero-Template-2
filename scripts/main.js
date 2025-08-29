@@ -18,23 +18,30 @@ document.addEventListener("click", (e) => {
 });
 
 // to make the bullets and links active when clicked
-const bullets = document.querySelectorAll(".bullets span");
-bullets.forEach((bullet) => {
+const bullets_home = document.querySelectorAll("#home .bullets span");
+bullets_home.forEach((bullet) => {
   bullet.addEventListener("click", () => {
     // remove active class from all
-    bullets.forEach((b) => b.classList.remove("active"));
+    bullets_home.forEach((b) => b.classList.remove("active"));
     // add active to the one clicked
     bullet.classList.add("active");
   });
 });
 
-const links = document.querySelectorAll(".nav-links ul a");
-links.forEach((link) => {
-  link.addEventListener("click", () => {
-    links.forEach((b) => b.classList.remove("active"));
-    link.classList.add("active");
+const bullets_about = document.querySelectorAll("#about .bullets span");
+bullets_about.forEach((bullet) => {
+  bullet.addEventListener("click", () => {
+    bullets_about.forEach((b) => b.classList.remove("active"));
+    bullet.classList.add("active");
   });
 });
+
+// links.forEach((link) => {
+//   link.addEventListener("click", () => {
+//     links.forEach((b) => b.classList.remove("active"));
+//     link.classList.add("active");
+//   });
+// });
 
 const portfolio_filters = document.querySelectorAll(
   "#portfolio .filter button"
@@ -103,6 +110,7 @@ portfolio_filters.forEach((button) => {
 const header = document.querySelector("header");
 const sections = document.querySelectorAll("section");
 
+const links = document.querySelectorAll(".nav-links ul a");
 // observer to track when header is inside a section
 const observer = new IntersectionObserver(
   (entries) => {
@@ -152,6 +160,8 @@ const observer_bg = new IntersectionObserver(
 );
 
 sections.forEach((sec) => observer.observe(sec));
-observer_bg.observe(document.querySelector("#services .overlay"));
+observer_bg.observe(document.querySelector("#services > .overlay"));
 observer_bg.observe(document.querySelector("#portfolio > .overlay"));
 observer_bg.observe(document.querySelector("#portfolio .grid"));
+observer_bg.observe(document.querySelector("#about > .overlay"));
+observer_bg.observe(document.querySelector("#about > .overlay2"));
