@@ -165,3 +165,4 @@ observer_bg.observe(document.querySelector("#portfolio > .overlay"));
 observer_bg.observe(document.querySelector("#portfolio .grid"));
 observer_bg.observe(document.querySelector("#about > .overlay"));
 observer_bg.observe(document.querySelector("#about > .overlay2"));
+observer_bg.observe(document.querySelector("#pricing > .overlay"));

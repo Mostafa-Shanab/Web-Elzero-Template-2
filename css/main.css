@@ -72,10 +72,23 @@ section {
   padding-block: 100px;
 }
 
-button,
 a {
   text-transform: uppercase;
 }
+
+.btn-special {
+  padding: 0.5em 2em;
+  background: var(--primary-color);
+  color: #ffffff;
+  border: none;
+  font-size: 1.3em;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.btn-special:hover {
+  transform: scale(1.1);
+}
+
 /* End Global Rules */
 
 /* Start Header */
@@ -564,19 +577,6 @@ nav a:hover,
   margin-block: 50px;
 }
 
-.gallery .more button {
-  padding: 0.5em 3em;
-  background: var(--primary-color);
-  color: #ffffff;
-  border: none;
-  font-size: 1.3em;
-  cursor: pointer;
-  transition: transform 0.5s;
-}
-.gallery .more button:hover {
-  transform: scale(1.1);
-}
-
 #portfolio > .overlay {
   padding-block: 150px;
   background: url(../assets/images/bg_img_portfolio.jpg) no-repeat center center /
@@ -842,3 +842,162 @@ nav a:hover,
   font-weight: 300;
 }
 /* End about Section */
+
+/* Start pricing Section */
+
+#pricing .btn-special {
+  font-size: 1.2em;
+  padding-inline: 1.5em;
+}
+
+#pricing .plans .btn-special {
+  background-color: white;
+  color: black;
+  border: 1px solid var(--primary-color);
+}
+
+#pricing .plans .btn-special:hover {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+}
+
+#pricing .plans {
+  display: flex;
+  justify-content: space-between;
+  margin-block: 100px;
+  flex-wrap: wrap;
+}
+
+/* Small Devices*/
+@media screen and (max-width: 481px) {
+  #pricing .plans {
+    justify-content: center;
+  }
+}
+
+#pricing .plan h3 {
+  font-weight: 500;
+}
+
+#pricing .plan .price {
+  font-weight: 600;
+  font-size: 4em;
+  display: flex;
+  column-gap: 10px;
+}
+
+#pricing .plan .price span:first-of-type {
+  font-size: 0.3em;
+  margin-block-start: 10px;
+}
+#pricing .plan .price span:last-of-type {
+  font-size: 0.2em;
+  align-self: flex-end;
+}
+
+#pricing .plan {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2em;
+  align-items: center;
+  border-block-start: 1px solid var(--primary-color);
+  padding-block: 2em;
+}
+
+#pricing .plan .features {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-block: 1px solid var(--primary-color);
+  padding-inline: 3em;
+}
+
+#pricing .plan .features li {
+  padding: 1em;
+  border-block-end: 1px solid var(--primary-color);
+}
+
+#pricing .plan .features li:last-child {
+  border-block-end: none;
+}
+
+#pricing .contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 15px;
+  margin-block: 100px;
+}
+#pricing .contact p {
+  font-size: 1.5em;
+}
+
+#pricing .overlay {
+  padding-block: 100px;
+  background: url(../assets/images/bg_img_about2.jpg) no-repeat center center /
+    cover;
+  background-blend-mode: overlay;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: start;
+}
+
+#pricing .overlay .wrapper {
+  display: flex;
+  column-gap: 55px;
+  row-gap: 55px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#pricing .overlay .wrapper > p {
+  flex: 1 1 100px;
+  line-height: 1.5;
+}
+
+#pricing .subscribe-form {
+  flex: 2 1 100px;
+  display: flex;
+  border: 1px solid #fff;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#pricing .subscribe-form .input-box {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  padding-inline: 10px;
+  column-gap: 15px;
+}
+
+#pricing .subscribe-form i {
+  font-size: 18px;
+}
+
+#pricing .subscribe-form .btn-special {
+  padding-block: 1em;
+}
+
+#pricing .subscribe-form input {
+  flex-grow: 1;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.5em;
+  /* width: fit-content; */
+}
+
+#pricing .subscribe-form input::placeholder {
+  color: #ddd;
+}
+
+/* الوصف */
+/* .subscribe .desc {
+  max-width: 300px;
+  font-size: 14px;
+} */
+
+/* End pricing Section */
